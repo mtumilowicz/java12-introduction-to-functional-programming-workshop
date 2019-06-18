@@ -16,13 +16,15 @@ public class Step3P_Recursion_Answer {
     }
 
     static List<Integer> square(List<Integer> xs) {
-        if (xs.isEmpty()) return List.empty();
-        else return square(xs.tail()).prepend(xs.head() * xs.head());
+        return xs.headOption()
+                .map(head -> square(xs.tail()).prepend(head * head))
+                .getOrElse(List.empty());
     }
 
     static int sum(List<Integer> xs) {
-        if (xs.isEmpty()) return 0;
-        else return xs.head() + sum(xs.tail());
+       return xs.headOption()
+               .map(head -> head + sum(xs.tail()))
+               .getOrElse(0);
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
