@@ -11,7 +11,6 @@ public class F_Combinators_Answer {
     }
 
     static <A, B> List<B> flatMap(List<A> xs, Function<A, List<B>> f) {
-
         return reduce(xs, List.of(), (acc, x) -> Lists.concat(f.apply(x), acc));
     }
 
