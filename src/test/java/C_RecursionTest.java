@@ -1,10 +1,9 @@
+import io.vavr.collection.List;
 import org.junit.Test;
-
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class C_Recursion {
+public class C_RecursionTest {
     
     @Test
     public void test() {

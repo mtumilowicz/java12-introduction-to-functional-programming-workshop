@@ -2,9 +2,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class E_Reduce {
+public class A_LoopTest {
     @Test
     public void test() {
-        assertEquals(220, E_Reduce_Answer.sumOfSquaresOfEvenNumbersUpTo(10));
+        assertEquals(220, A_Loop_Answer.sumOfSquaresOfEvenNumbersUpTo(10));
     }
 }

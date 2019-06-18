@@ -2,10 +2,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class B_Decomplect {
+public class D_HigherOrderTest {
     
     @Test
     public void test() {
-        assertEquals(220, B_Decomplect_Answer.sumOfSquaresOfEvenNumbersUpTo(10));
+        assertEquals(220, D_HigherOrder_Answer.sumOfSquaresOfEvenNumbersUpTo(10));
     }
 }
