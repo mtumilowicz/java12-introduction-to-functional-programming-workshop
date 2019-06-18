@@ -1,4 +1,4 @@
-public class Step1_Loop {
+class Step1_Loop {
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
         int sum = 0;
