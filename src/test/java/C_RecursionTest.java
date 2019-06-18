@@ -11,8 +11,8 @@ public class C_RecursionTest {
     }
 
     @Test
-    public void testIterate() {
-        assertEquals(List.of(1, 2, 3), Step3_Recursion_Answer.iterate(3));
+    public void testiteratePositiveUpTo() {
+        assertEquals(List.of(1, 2, 3), Step3_Recursion_Answer.iteratePositiveUpTo(3));
     }
 
     @Test

@@ -14,9 +14,9 @@ public class Step5_Reduce_Answer {
         return reduce(xs, List.empty(), (acc, x) -> f.apply(x).appendAll(acc));
     }
 
-    static List<Integer> iterate(int max) {
+    static List<Integer> iteratePositiveUpTo(int max) {
         if (max == 0) return List.empty();
-        else return iterate(max - 1).append(max);
+        else return iteratePositiveUpTo(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
@@ -32,6 +32,6 @@ public class Step5_Reduce_Answer {
     }
 
     static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
-        return sum(square(filterEven(iterate(max))));
+        return sum(square(filterEven(iteratePositiveUpTo(max))));
     }
 }

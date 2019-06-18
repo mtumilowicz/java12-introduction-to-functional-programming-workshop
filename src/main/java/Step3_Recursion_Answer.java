@@ -2,10 +2,10 @@ import io.vavr.collection.List;
 
 public class Step3_Recursion_Answer {
 
-    static List<Integer> iterate(int max) {
+    static List<Integer> iteratePositiveUpTo(int max) {
         return max == 0
                 ? List.empty()
-                : iterate(max - 1).append(max);
+                : iteratePositiveUpTo(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
@@ -26,6 +26,6 @@ public class Step3_Recursion_Answer {
     }
 
     static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
-        return sum(square(filterEven(iterate(max))));
+        return sum(square(filterEven(iteratePositiveUpTo(max))));
     }
 }

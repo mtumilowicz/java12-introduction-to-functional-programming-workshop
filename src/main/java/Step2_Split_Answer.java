@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Step2_Split_Answer {
 
-     static List<Integer> iterate(int max) {
+     static List<Integer> iteratePositiveUpTo(int max) {
         var result = new ArrayList<Integer>();
 
         for (int x = 1; x <= max; x++) {
@@ -46,6 +46,6 @@ public class Step2_Split_Answer {
     }
 
     static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
-        return sum(square(filterEven(iterate(max))));
+        return sum(square(filterEven(iteratePositiveUpTo(max))));
     }
 }
