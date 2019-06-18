@@ -5,7 +5,7 @@ import spock.lang.Specification
  */
 class Step1_LoopTest extends Specification {
     
-    def "test sumOfSquaresOfPositiveEvenNumbersUpTo with negative max"() {
+    def "test sumOfSquaresOfPositiveEvenNumbersUpTo < 0"() {
         given:
         int max = -1
 
@@ -13,15 +13,15 @@ class Step1_LoopTest extends Specification {
         Step1_Loop.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
     }
 
-    def "test sumOfSquaresOfPositiveEvenNumbersUpTo with zero max"() {
+    def "test sumOfSquaresOfPositiveEvenNumbersUpTo 0"() {
         given:
-        int max = -1
+        int max = 0
 
         expect:
         Step1_Loop.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
     }
 
-    def "test sumOfSquaresOfPositiveEvenNumbersUpTo with positive max"() {
+    def "test sumOfSquaresOfPositiveEvenNumbersUpTo > 0"() {
         given:
         int max = 12
 
