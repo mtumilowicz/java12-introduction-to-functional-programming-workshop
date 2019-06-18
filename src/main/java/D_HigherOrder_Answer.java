@@ -1,16 +1,17 @@
-import java.util.List;
+import io.vavr.collection.List;
+
 import java.util.function.Function;
 
 public class D_HigherOrder_Answer {
 
     static List<Integer> flatMap(List<Integer> xs, Function<Integer, List<Integer>> f) {
         if (xs.isEmpty()) return List.of();
-        else return Lists.concat(f.apply(Lists.head(xs)), flatMap(Lists.tail(xs), f));
+        else return f.apply(xs.head()).appendAll(flatMap(xs.tail(), f));
     }
 
     static List<Integer> iterate(int max) {
         if (max == 0) return List.of();
-        else return Lists.append(iterate(max - 1), max);
+        else return iterate(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
@@ -23,7 +24,7 @@ public class D_HigherOrder_Answer {
 
     static int sum(List<Integer> xs) {
         if (xs.isEmpty()) return 0;
-        else return Lists.head(xs) + sum(Lists.tail(xs));
+        else return xs.head() + sum(xs.tail());
     }
 
     static int sumOfSquaresOfEvenNumbersUpTo(int max) {
