@@ -4,17 +4,16 @@ import java.util.stream.IntStream;
 
 public class G_Streams_Answer {
 
-    public static
-    int sumOfSquaresOfEvenNumbersUpTo(int max) {
+    static int sumOfSquaresOfEvenNumbersUpTo(int max) {
 
         IntPredicate isEven = x -> x % 2 == 0;
 
         IntUnaryOperator square = x -> x * x;
 
         return IntStream
-            .rangeClosed(1, max)
-            .filter(isEven)
-            .map(square)
-            .sum();
+                .rangeClosed(1, max)
+                .filter(isEven)
+                .map(square)
+                .sum();
     }
 }
