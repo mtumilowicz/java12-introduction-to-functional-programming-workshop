@@ -11,16 +11,16 @@ public class Step5_Reduce_Answer {
     }
 
     static <A> List<A> flatMap(List<A> xs, Function<A, List<A>> f) {
-        return reduce(xs, List.of(), (acc, x) -> f.apply(x).appendAll(acc));
+        return reduce(xs, List.empty(), (acc, x) -> f.apply(x).appendAll(acc));
     }
 
     static List<Integer> iterate(int max) {
-        if (max == 0) return List.of();
+        if (max == 0) return List.empty();
         else return iterate(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
-        return flatMap(xs, x -> x % 2 == 0 ? List.of(x) : List.of());
+        return flatMap(xs, x -> x % 2 == 0 ? List.of(x) : List.empty());
     }
 
     static List<Integer> square(List<Integer> xs) {

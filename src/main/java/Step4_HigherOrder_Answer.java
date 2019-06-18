@@ -5,17 +5,17 @@ import java.util.function.Function;
 public class Step4_HigherOrder_Answer {
 
     static List<Integer> flatMap(List<Integer> xs, Function<Integer, List<Integer>> f) {
-        if (xs.isEmpty()) return List.of();
+        if (xs.isEmpty()) return List.empty();
         else return f.apply(xs.head()).appendAll(flatMap(xs.tail(), f));
     }
 
     static List<Integer> iterate(int max) {
-        if (max == 0) return List.of();
+        if (max == 0) return List.empty();
         else return iterate(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
-        return flatMap(xs, x -> x % 2 == 0 ? List.of(x) : List.of());
+        return flatMap(xs, x -> x % 2 == 0 ? List.of(x) : List.empty());
     }
 
     static List<Integer> square(List<Integer> xs) {

@@ -12,11 +12,11 @@ public class Step6_Combinators_Answer {
     }
 
     static <A, B> List<B> flatMap(List<A> xs, Function<A, List<B>> f) {
-        return reduce(xs, List.of(), (acc, x) -> f.apply(x).appendAll(acc));
+        return reduce(xs, List.empty(), (acc, x) -> f.apply(x).appendAll(acc));
     }
 
     static <A> List<A> filter(List<A> xs, Predicate<A> f) {
-        return flatMap(xs, x -> f.test(x) ? List.of(x) : List.of());
+        return flatMap(xs, x -> f.test(x) ? List.of(x) : List.empty());
     }
 
     static <A, B> List<B> map(List<A> xs, Function<A, B> f) {
@@ -24,7 +24,7 @@ public class Step6_Combinators_Answer {
     }
 
     static List<Integer> iterate(int max) {
-        if (max == 0) return List.of();
+        if (max == 0) return List.empty();
         else return iterate(max - 1).append(max);
     }
 
