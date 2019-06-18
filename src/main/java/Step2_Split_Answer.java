@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class B_Decomplect_Answer {
+public class Step2_Split_Answer {
 
      static List<Integer> iterate(int max) {
         var result = new ArrayList<Integer>();

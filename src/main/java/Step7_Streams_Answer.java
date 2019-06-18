@@ -2,7 +2,7 @@ import java.util.function.IntPredicate;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.IntStream;
 
-public class G_Streams_Answer {
+public class Step7_Streams_Answer {
 
     static int sumOfSquaresOfEvenNumbersUpTo(int max) {
 

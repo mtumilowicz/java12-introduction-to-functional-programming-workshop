@@ -6,6 +6,6 @@ public class B_DecomplectTest {
     
     @Test
     public void test() {
-        assertEquals(220, B_Decomplect_Answer.sumOfSquaresOfEvenNumbersUpTo(10));
+        assertEquals(220, Step2_Split_Answer.sumOfSquaresOfEvenNumbersUpTo(10));
     }
 }
