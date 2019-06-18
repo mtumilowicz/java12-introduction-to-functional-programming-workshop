@@ -45,7 +45,7 @@ public class Step2_Split_Answer {
         return result;
     }
 
-    static int sumOfSquaresOfEvenNumbersUpTo(int max) {
+    static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
         return sum(square(filterEven(iterate(max))));
     }
 }

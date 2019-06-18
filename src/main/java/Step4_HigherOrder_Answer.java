@@ -27,7 +27,7 @@ public class Step4_HigherOrder_Answer {
         else return xs.head() + sum(xs.tail());
     }
 
-    static int sumOfSquaresOfEvenNumbersUpTo(int max) {
+    static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
         return sum(square(filterEven(iterate(max))));
     }
 }

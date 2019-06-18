@@ -7,7 +7,7 @@ public class C_RecursionTest {
     
     @Test
     public void test() {
-        assertEquals(220, Step3_Recursion_Answer.sumOfSquaresOfEvenNumbersUpTo(10));
+        assertEquals(220, Step3_Recursion_Answer.sumOfSquaresOfEvenPositiveNumbersUpTo(10));
     }
 
     @Test

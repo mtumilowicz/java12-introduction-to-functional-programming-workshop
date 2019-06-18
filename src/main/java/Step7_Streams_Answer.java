@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 
 public class Step7_Streams_Answer {
 
-    static int sumOfSquaresOfEvenNumbersUpTo(int max) {
+    static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
 
         IntPredicate isEven = x -> x % 2 == 0;
 

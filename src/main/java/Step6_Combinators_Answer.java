@@ -40,7 +40,7 @@ public class Step6_Combinators_Answer {
         return reduce(xs, 0, Integer::sum);
     }
 
-    static int sumOfSquaresOfEvenNumbersUpTo(int max) {
+    static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
         return sum(square(filterEven(iterate(max))));
     }
 }
