@@ -17,22 +17,22 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         Step4_HigherOrder_Answer.flatMap(empty, triple) == List.empty()
     }
 
-    def "test flatMap single value list"() {
+    def "test flatMap single element list"() {
         given:
-        def empty = List.of(1)
+        def list = List.of(1)
         Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
 
         expect:
-        Step4_HigherOrder_Answer.flatMap(empty, triple) == List.of(1, 1, 1)
+        Step4_HigherOrder_Answer.flatMap(list, triple) == List.of(1, 1, 1)
     }
 
-    def "test flatMap multiple value list"() {
+    def "test flatMap multiple element list"() {
         given:
-        def empty = List.of(1, 2, 3)
+        def list = List.of(1, 2, 3)
         Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
 
         expect:
-        Step4_HigherOrder_Answer.flatMap(empty, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
+        Step4_HigherOrder_Answer.flatMap(list, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
     }
 
     def "test iteratePositiveUpTo < 0"() {

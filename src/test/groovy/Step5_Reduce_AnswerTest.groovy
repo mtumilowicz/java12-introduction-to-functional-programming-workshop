@@ -1,12 +1,40 @@
 import io.vavr.collection.List
 import spock.lang.Specification
 
+import java.util.function.BiFunction
 import java.util.function.Function
 
 /**
  * Created by mtumilowicz on 2019-06-19.
  */
 class Step5_Reduce_AnswerTest extends Specification {
+    
+    def "test reduce empty list"() {
+        given:
+        def empty = List.<Integer> empty()
+        BiFunction<Integer, Integer, Integer> sum = { first, second -> first + second }
+
+        expect:
+        Step5_Reduce_Answer.reduce(empty, 0, sum) == 0
+    }
+
+    def "test reduce single element list"() {
+        given:
+        def list = List.of(1)
+        BiFunction<Integer, Integer, Integer> sum = { first, second -> first + second }
+
+        expect:
+        Step5_Reduce_Answer.reduce(list, 0, sum) == 1
+    }
+
+    def "test reduce multiple element list"() {
+        given:
+        def list = List.of(1, 2, 3)
+        BiFunction<Integer, Integer, Integer> sum = { first, second -> first + second }
+
+        expect:
+        Step5_Reduce_Answer.reduce(list, 0, sum) == 6
+    }
     
     def "test flatMap empty list"() {
         given:
@@ -17,22 +45,22 @@ class Step5_Reduce_AnswerTest extends Specification {
         Step5_Reduce_Answer.flatMap(empty, triple) == List.empty()
     }
 
-    def "test flatMap single value list"() {
+    def "test flatMap single element list"() {
         given:
-        def empty = List.of(1)
+        def list = List.of(1)
         Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
 
         expect:
-        Step5_Reduce_Answer.flatMap(empty, triple) == List.of(1, 1, 1)
+        Step5_Reduce_Answer.flatMap(list, triple) == List.of(1, 1, 1)
     }
 
-    def "test flatMap multiple value list"() {
+    def "test flatMap multiple element list"() {
         given:
-        def empty = List.of(1, 2, 3)
+        def list = List.of(1, 2, 3)
         Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
 
         expect:
-        Step5_Reduce_Answer.flatMap(empty, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
+        Step5_Reduce_Answer.flatMap(list, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
     }
 
     def "test iteratePositiveUpTo < 0"() {
