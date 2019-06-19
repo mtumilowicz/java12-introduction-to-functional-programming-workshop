@@ -6,7 +6,7 @@ import java.util.function.Function
 /**
  * Created by mtumilowicz on 2019-06-19.
  */
-class Step4_HigherOrder_Answer2Test extends Specification {
+class Step4_HigherOrder_AnswerTest extends Specification {
 
     def "test flatMap empty list"() {
         given:
