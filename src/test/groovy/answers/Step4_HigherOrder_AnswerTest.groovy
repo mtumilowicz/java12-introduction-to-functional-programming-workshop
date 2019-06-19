@@ -1,3 +1,6 @@
+package answers
+
+import answers.Step4_HigherOrder_Answer
 import io.vavr.collection.List
 import spock.lang.Specification
 

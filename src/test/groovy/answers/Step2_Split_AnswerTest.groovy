@@ -1,17 +1,20 @@
+package answers
+
+import answers.Step2_Split_Answer
 import io.vavr.collection.List
 import spock.lang.Specification
 
 /**
  * Created by mtumilowicz on 2019-06-18.
  */
-class Step3_Recursion_AnswerTest extends Specification {
+class Step2_Split_AnswerTest extends Specification {
     
     def "test iteratePositiveUpTo < 0"() {
         given:
         int max = -1
 
         expect:
-        Step3_Recursion_Answer.iteratePositiveUpTo(max) == List.empty()
+        Step2_Split_Answer.iteratePositiveUpTo(max) == List.empty()
     }
 
     def "test iteratePositiveUpTo 0"() {
@@ -19,7 +22,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         int max = 0
 
         expect:
-        Step3_Recursion_Answer.iteratePositiveUpTo(max) == List.empty()
+        Step2_Split_Answer.iteratePositiveUpTo(max) == List.empty()
     }    
     
     def "test iteratePositiveUpTo > 0"() {
@@ -27,7 +30,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         int max = 5
 
         expect:
-        Step3_Recursion_Answer.iteratePositiveUpTo(max) == List.of(1, 2, 3, 4, 5)
+        Step2_Split_Answer.iteratePositiveUpTo(max) == List.of(1, 2, 3, 4, 5)
     }
 
     def "test filterEven all even"() {
@@ -35,7 +38,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         def evens = List.of(-2, 2, 4, 6)
         
         expect:
-        Step3_Recursion_Answer.filterEven(evens) == List.of(-2, 2, 4, 6)
+        Step2_Split_Answer.filterEven(evens) == List.of(-2, 2, 4, 6)
     }
 
     def "test filterEven all odd"() {
@@ -43,7 +46,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         def evens = List.of(-1, 1, 3, 5)
 
         expect:
-        Step3_Recursion_Answer.filterEven(evens) == List.empty()
+        Step2_Split_Answer.filterEven(evens) == List.empty()
     }
 
     def "test filterEven mixed"() {
@@ -51,7 +54,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         def evens = List.of(-2, 2, 4, 6, -1, 1, 3, 5)
 
         expect:
-        Step3_Recursion_Answer.filterEven(evens) == List.of(-2, 2, 4, 6)
+        Step2_Split_Answer.filterEven(evens) == List.of(-2, 2, 4, 6)
     }
 
     def "test square < 0"() {
@@ -59,7 +62,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         def negatives = List.of(-4, -3, -2, -1)
         
         expect:
-        Step3_Recursion_Answer.square(negatives) == List.of(16, 9, 4, 1)
+        Step2_Split_Answer.square(negatives) == List.of(16, 9, 4, 1)
     }    
     
     def "test square 0"() {
@@ -67,7 +70,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         def negatives = List.of(0)
 
         expect:
-        Step3_Recursion_Answer.square(negatives) == List.of(0)
+        Step2_Split_Answer.square(negatives) == List.of(0)
     }    
     
     def "test square > 0"() {
@@ -75,7 +78,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         def negatives = List.of(4, 3, 2, 1)
 
         expect:
-        Step3_Recursion_Answer.square(negatives) == List.of(16, 9, 4, 1)
+        Step2_Split_Answer.square(negatives) == List.of(16, 9, 4, 1)
     }
 
     def "test square mixed"() {
@@ -83,19 +86,19 @@ class Step3_Recursion_AnswerTest extends Specification {
         def negatives = List.of(-1, 2)
 
         expect:
-        Step3_Recursion_Answer.square(negatives) == List.of(1, 4)
+        Step2_Split_Answer.square(negatives) == List.of(1, 4)
     }
 
     def "test sum"() {
         expect:
-        Step3_Recursion_Answer.sum(List.of(-1, 1, 2, 3, -4, 5)) == 6
+        Step2_Split_Answer.sum(List.of(-1, 1, 2, 3, -4, 5)) == 6
     }
     def "test sumOfSquaresOfPositiveEvenNumbersUpTo < 0"() {
         given:
         int max = -1
 
         expect:
-        Step3_Recursion_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
+        Step2_Split_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
     }
 
     def "test sumOfSquaresOfPositiveEvenNumbersUpTo 0"() {
@@ -103,7 +106,7 @@ class Step3_Recursion_AnswerTest extends Specification {
         int max = 0
 
         expect:
-        Step3_Recursion_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
+        Step2_Split_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
     }
 
     def "test sumOfSquaresOfPositiveEvenNumbersUpTo > 0"() {
@@ -111,6 +114,6 @@ class Step3_Recursion_AnswerTest extends Specification {
         int max = 12
 
         expect:
-        Step3_Recursion_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 364
+        Step2_Split_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 364
     }
 }

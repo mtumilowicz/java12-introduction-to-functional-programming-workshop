@@ -1,3 +1,5 @@
+package answers;
+
 import io.vavr.collection.List;
 
 public class Step2_Split_Answer {

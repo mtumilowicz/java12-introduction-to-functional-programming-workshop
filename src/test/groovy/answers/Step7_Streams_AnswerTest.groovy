@@ -1,3 +1,6 @@
+package answers
+
+import answers.Step7_Streams_Answer
 import spock.lang.Specification
 
 /**

@@ -1,3 +1,6 @@
+package answers
+
+import answers.Step5_Reduce_Answer
 import io.vavr.collection.List
 import spock.lang.Specification
 

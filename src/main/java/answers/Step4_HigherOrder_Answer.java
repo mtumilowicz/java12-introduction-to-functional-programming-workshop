@@ -1,17 +1,14 @@
+package answers;
+
 import io.vavr.collection.List;
 
-import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public class Step5_Reduce_Answer {
+public class Step4_HigherOrder_Answer {
 
-    static <A, R> R reduce(List<A> xs, R zero, BiFunction<R, A, R> combine) {
-        if (xs.isEmpty()) return zero;
-        else return combine.apply(reduce(xs.tail(), zero, combine), xs.head());
-    }
-
-    static <A> List<A> flatMap(List<A> xs, Function<A, List<A>> f) {
-        return reduce(xs, List.empty(), (acc, x) -> f.apply(x).appendAll(acc));
+    static List<Integer> flatMap(List<Integer> xs, Function<Integer, List<Integer>> f) {
+        if (xs.isEmpty()) return List.empty();
+        else return f.apply(xs.head()).appendAll(flatMap(xs.tail(), f));
     }
 
     static List<Integer> iteratePositiveUpTo(int max) {
@@ -28,7 +25,8 @@ public class Step5_Reduce_Answer {
     }
 
     static int sum(List<Integer> xs) {
-        return reduce(xs, 0, Integer::sum);
+        if (xs.isEmpty()) return 0;
+        else return xs.head() + sum(xs.tail());
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {

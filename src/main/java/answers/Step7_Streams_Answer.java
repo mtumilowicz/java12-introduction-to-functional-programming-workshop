@@ -1,3 +1,5 @@
+package answers;
+
 import java.util.function.IntPredicate;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.IntStream;
