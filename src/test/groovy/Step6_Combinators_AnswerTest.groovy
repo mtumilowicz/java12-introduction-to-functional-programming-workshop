@@ -3,12 +3,13 @@ import spock.lang.Specification
 
 import java.util.function.BiFunction
 import java.util.function.Function
+import java.util.function.Predicate
 
 /**
  * Created by mtumilowicz on 2019-06-19.
  */
 class Step6_Combinators_AnswerTest extends Specification {
-    
+
     def "test reduce empty list"() {
         given:
         def empty = List.<Integer> empty()
@@ -61,6 +62,42 @@ class Step6_Combinators_AnswerTest extends Specification {
 
         expect:
         Step6_Combinators_Answer.flatMap(list, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
+    }
+
+    def "test filter empty list"() {
+        given:
+        def empty = List.<Integer> empty()
+        Predicate<Integer> even = { it % 2 == 0 }
+
+        expect:
+        Step6_Combinators_Answer.filter(empty, even) == List.empty()
+    }
+
+    def "test filter single element (that fulfills condition) list"() {
+        given:
+        def empty = List.of(2)
+        Predicate<Integer> even = { it % 2 == 0 }
+
+        expect:
+        Step6_Combinators_Answer.filter(empty, even) == List.of(2)
+    }
+
+    def "test filter single element (that does not fulfill condition) list"() {
+        given:
+        def empty = List.of(1)
+        Predicate<Integer> even = { it % 2 == 0 }
+
+        expect:
+        Step6_Combinators_Answer.filter(empty, even) == List.empty()
+    }
+
+    def "test filter mixed element list"() {
+        given:
+        def empty = List.of(1, 2, 3, 4)
+        Predicate<Integer> even = { it % 2 == 0 }
+
+        expect:
+        Step6_Combinators_Answer.filter(empty, even) == List.of(2, 4)
     }
 
     def "test iteratePositiveUpTo < 0"() {
@@ -171,5 +208,5 @@ class Step6_Combinators_AnswerTest extends Specification {
         expect:
         Step6_Combinators_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 364
     }
-    
+
 }
