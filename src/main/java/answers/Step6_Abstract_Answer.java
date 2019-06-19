@@ -25,9 +25,9 @@ public class Step6_Abstract_Answer {
         return flatMap(xs, x -> List.of(f.apply(x)));
     }
 
-    static List<Integer> iteratePositiveUpTo(int max) {
+    static List<Integer> iteratePositivesUpTo(int max) {
         if (max <= 0) return List.empty();
-        else return iteratePositiveUpTo(max - 1).append(max);
+        else return iteratePositivesUpTo(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
@@ -43,6 +43,6 @@ public class Step6_Abstract_Answer {
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
-        return sum(square(filterEven(iteratePositiveUpTo(max))));
+        return sum(square(filterEven(iteratePositivesUpTo(max))));
     }
 }

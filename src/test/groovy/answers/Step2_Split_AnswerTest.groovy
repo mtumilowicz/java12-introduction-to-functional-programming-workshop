@@ -9,28 +9,28 @@ import spock.lang.Specification
  */
 class Step2_Split_AnswerTest extends Specification {
     
-    def "test iteratePositiveUpTo < 0"() {
+    def "test iteratePositivesUpTo < 0"() {
         given:
         int max = -1
 
         expect:
-        Step2_Split_Answer.iteratePositiveUpTo(max) == List.empty()
+        Step2_Split_Answer.iteratePositivesUpTo(max) == List.empty()
     }
 
-    def "test iteratePositiveUpTo 0"() {
+    def "test iteratePositivesUpTo 0"() {
         given:
         int max = 0
 
         expect:
-        Step2_Split_Answer.iteratePositiveUpTo(max) == List.empty()
+        Step2_Split_Answer.iteratePositivesUpTo(max) == List.empty()
     }    
     
-    def "test iteratePositiveUpTo > 0"() {
+    def "test iteratePositivesUpTo > 0"() {
         given:
         int max = 5
 
         expect:
-        Step2_Split_Answer.iteratePositiveUpTo(max) == List.of(1, 2, 3, 4, 5)
+        Step2_Split_Answer.iteratePositivesUpTo(max) == List.of(1, 2, 3, 4, 5)
     }
 
     def "test filterEven all even"() {

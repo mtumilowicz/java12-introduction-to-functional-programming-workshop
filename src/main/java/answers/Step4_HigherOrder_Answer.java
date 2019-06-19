@@ -11,9 +11,9 @@ public class Step4_HigherOrder_Answer {
         else return f.apply(xs.head()).appendAll(flatMap(xs.tail(), f));
     }
 
-    static List<Integer> iteratePositiveUpTo(int max) {
+    static List<Integer> iteratePositivesUpTo(int max) {
         if (max <= 0) return List.empty();
-        else return iteratePositiveUpTo(max - 1).append(max);
+        else return iteratePositivesUpTo(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
@@ -30,6 +30,6 @@ public class Step4_HigherOrder_Answer {
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
-        return sum(square(filterEven(iteratePositiveUpTo(max))));
+        return sum(square(filterEven(iteratePositivesUpTo(max))));
     }
 }
