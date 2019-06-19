@@ -6,7 +6,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class Step6_Combinators_Answer {
+public class Step6_Abstract_Answer {
 
     static <A, R> R reduce(List<A> xs, R zero, BiFunction<R, A, R> combine) {
         if (xs.isEmpty()) return zero;
