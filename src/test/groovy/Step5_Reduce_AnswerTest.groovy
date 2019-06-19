@@ -6,7 +6,7 @@ import java.util.function.Function
 /**
  * Created by mtumilowicz on 2019-06-19.
  */
-class Step5_Reduce_Answer2Test extends Specification {
+class Step5_Reduce_AnswerTest extends Specification {
     
     def "test flatMap empty list"() {
         given:
@@ -143,4 +143,5 @@ class Step5_Reduce_Answer2Test extends Specification {
         expect:
         Step5_Reduce_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 364
     }
+    
 }
