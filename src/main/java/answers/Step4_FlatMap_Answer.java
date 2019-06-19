@@ -4,7 +4,7 @@ import io.vavr.collection.List;
 
 import java.util.function.Function;
 
-public class Step4_HigherOrder_Answer {
+public class Step4_FlatMap_Answer {
 
     static List<Integer> flatMap(List<Integer> xs, Function<Integer, List<Integer>> f) {
         if (xs.isEmpty()) return List.empty();

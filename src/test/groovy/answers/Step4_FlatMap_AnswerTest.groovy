@@ -1,6 +1,6 @@
 package answers
 
-import answers.Step4_HigherOrder_Answer
+
 import io.vavr.collection.List
 import spock.lang.Specification
 
@@ -9,7 +9,7 @@ import java.util.function.Function
 /**
  * Created by mtumilowicz on 2019-06-19.
  */
-class Step4_HigherOrder_AnswerTest extends Specification {
+class Step4_FlatMap_AnswerTest extends Specification {
 
     def "test flatMap empty list"() {
         given:
@@ -17,7 +17,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
 
         expect:
-        Step4_HigherOrder_Answer.flatMap(empty, triple) == List.empty()
+        Step4_FlatMap_Answer.flatMap(empty, triple) == List.empty()
     }
 
     def "test flatMap single element list"() {
@@ -26,7 +26,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
 
         expect:
-        Step4_HigherOrder_Answer.flatMap(list, triple) == List.of(1, 1, 1)
+        Step4_FlatMap_Answer.flatMap(list, triple) == List.of(1, 1, 1)
     }
 
     def "test flatMap multiple element list"() {
@@ -35,7 +35,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
 
         expect:
-        Step4_HigherOrder_Answer.flatMap(list, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
+        Step4_FlatMap_Answer.flatMap(list, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
     }
 
     def "test iteratePositivesUpTo < 0"() {
@@ -43,7 +43,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         int max = -1
 
         expect:
-        Step4_HigherOrder_Answer.iteratePositivesUpTo(max) == List.empty()
+        Step4_FlatMap_Answer.iteratePositivesUpTo(max) == List.empty()
     }
 
     def "test iteratePositivesUpTo 0"() {
@@ -51,7 +51,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         int max = 0
 
         expect:
-        Step4_HigherOrder_Answer.iteratePositivesUpTo(max) == List.empty()
+        Step4_FlatMap_Answer.iteratePositivesUpTo(max) == List.empty()
     }
 
     def "test iteratePositivesUpTo > 0"() {
@@ -59,7 +59,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         int max = 5
 
         expect:
-        Step4_HigherOrder_Answer.iteratePositivesUpTo(max) == List.of(1, 2, 3, 4, 5)
+        Step4_FlatMap_Answer.iteratePositivesUpTo(max) == List.of(1, 2, 3, 4, 5)
     }
 
     def "test filterEven all even"() {
@@ -67,7 +67,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         def evens = List.of(-2, 2, 4, 6)
 
         expect:
-        Step4_HigherOrder_Answer.filterEven(evens) == List.of(-2, 2, 4, 6)
+        Step4_FlatMap_Answer.filterEven(evens) == List.of(-2, 2, 4, 6)
     }
 
     def "test filterEven all odd"() {
@@ -75,7 +75,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         def evens = List.of(-1, 1, 3, 5)
 
         expect:
-        Step4_HigherOrder_Answer.filterEven(evens) == List.empty()
+        Step4_FlatMap_Answer.filterEven(evens) == List.empty()
     }
 
     def "test filterEven mixed"() {
@@ -83,7 +83,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         def evens = List.of(-2, 2, 4, 6, -1, 1, 3, 5)
 
         expect:
-        Step4_HigherOrder_Answer.filterEven(evens) == List.of(-2, 2, 4, 6)
+        Step4_FlatMap_Answer.filterEven(evens) == List.of(-2, 2, 4, 6)
     }
 
     def "test square < 0"() {
@@ -91,7 +91,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         def negatives = List.of(-4, -3, -2, -1)
 
         expect:
-        Step4_HigherOrder_Answer.square(negatives) == List.of(16, 9, 4, 1)
+        Step4_FlatMap_Answer.square(negatives) == List.of(16, 9, 4, 1)
     }
 
     def "test square 0"() {
@@ -99,7 +99,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         def negatives = List.of(0)
 
         expect:
-        Step4_HigherOrder_Answer.square(negatives) == List.of(0)
+        Step4_FlatMap_Answer.square(negatives) == List.of(0)
     }
 
     def "test square > 0"() {
@@ -107,7 +107,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         def negatives = List.of(4, 3, 2, 1)
 
         expect:
-        Step4_HigherOrder_Answer.square(negatives) == List.of(16, 9, 4, 1)
+        Step4_FlatMap_Answer.square(negatives) == List.of(16, 9, 4, 1)
     }
 
     def "test square mixed"() {
@@ -115,12 +115,12 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         def negatives = List.of(-1, 2)
 
         expect:
-        Step4_HigherOrder_Answer.square(negatives) == List.of(1, 4)
+        Step4_FlatMap_Answer.square(negatives) == List.of(1, 4)
     }
 
     def "test sum"() {
         expect:
-        Step4_HigherOrder_Answer.sum(List.of(-1, 1, 2, 3, -4, 5)) == 6
+        Step4_FlatMap_Answer.sum(List.of(-1, 1, 2, 3, -4, 5)) == 6
     }
 
     def "test sumOfSquaresOfPositiveEvenNumbersUpTo < 0"() {
@@ -128,7 +128,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         int max = -1
 
         expect:
-        Step4_HigherOrder_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
+        Step4_FlatMap_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
     }
 
     def "test sumOfSquaresOfPositiveEvenNumbersUpTo 0"() {
@@ -136,7 +136,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         int max = 0
 
         expect:
-        Step4_HigherOrder_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
+        Step4_FlatMap_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 0
     }
 
     def "test sumOfSquaresOfPositiveEvenNumbersUpTo > 0"() {
@@ -144,7 +144,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         int max = 12
 
         expect:
-        Step4_HigherOrder_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 364
+        Step4_FlatMap_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 364
     }
 
 }
