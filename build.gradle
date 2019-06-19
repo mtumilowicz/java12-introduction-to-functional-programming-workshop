@@ -1,7 +1,6 @@
 plugins {
     id 'java'
     id 'groovy'
-    id 'io.franzbecker.gradle-lombok' version '1.14'
 }
 
 group 'java12-introduction-to-functional-programming-workshop'
@@ -9,10 +8,6 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 12
 targetCompatibility = 12
-
-lombok {
-    version = '1.18.4'
-}
 
 test {
     exclude '**/Workshop*'
