@@ -1,10 +1,39 @@
 import io.vavr.collection.List
 import spock.lang.Specification
 
+import java.util.function.Function
+
 /**
  * Created by mtumilowicz on 2019-06-19.
  */
 class Step4_HigherOrder_AnswerTest extends Specification {
+
+    def "test flatMap empty list"() {
+        given:
+        def empty = List.<Integer> empty()
+        Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
+
+        expect:
+        Step4_HigherOrder_Answer.flatMap(empty, triple) == List.empty()
+    }
+
+    def "test flatMap single value list"() {
+        given:
+        def empty = List.of(1)
+        Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
+
+        expect:
+        Step4_HigherOrder_Answer.flatMap(empty, triple) == List.of(1, 1, 1)
+    }
+
+    def "test flatMap multiple value list"() {
+        given:
+        def empty = List.of(1, 2, 3)
+        Function<Integer, List<Integer>> triple = { List.of(it, it, it) }
+
+        expect:
+        Step4_HigherOrder_Answer.flatMap(empty, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
+    }
 
     def "test iteratePositiveUpTo < 0"() {
         given:
@@ -90,6 +119,7 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         expect:
         Step4_HigherOrder_Answer.sum(List.of(-1, 1, 2, 3, -4, 5)) == 6
     }
+
     def "test sumOfSquaresOfPositiveEvenNumbersUpTo < 0"() {
         given:
         int max = -1
@@ -113,5 +143,5 @@ class Step4_HigherOrder_AnswerTest extends Specification {
         expect:
         Step4_HigherOrder_Answer.sumOfSquaresOfPositiveEvenNumbersUpTo(max) == 364
     }
-    
+
 }
