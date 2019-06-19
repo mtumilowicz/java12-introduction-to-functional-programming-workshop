@@ -5,13 +5,4 @@
 * https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-flatMap
 * https://github.com/mtumilowicz/java12-stream-flatMap-implementation-using-reduce
 * https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-reduce
-* zacząć od tego przykładu z forem i dużo w forze
-* potem rozbić na część (złamanie SRP)
-* zdefiniować metody head, tail, concat,
-* napisać używając rekurencji
-* wyabstrachować do flatMap, reduce
-* flatMap przy pomocy reduce
-* map, filter using flatMap
-* map, filter using reduce
-* using streams
-* 40.00 - summary
+* time in video: 40.00 - summary
