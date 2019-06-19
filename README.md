@@ -2,6 +2,9 @@
 
 * https://www.youtube.com/watch?v=9RGVDdE5QjI - workshop from functional programming (filter, map, flatMap)
 * https://github.com/shishkin/java-fp
+* https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-flatMap
+* https://github.com/mtumilowicz/java12-stream-flatMap-implementation-using-reduce
+* https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-reduce
 * zacząć od tego przykładu z forem i dużo w forze
 * potem rozbić na część (złamanie SRP)
 * zdefiniować metody head, tail, concat,
