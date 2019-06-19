@@ -10,7 +10,7 @@ sourceCompatibility = 12
 targetCompatibility = 12
 
 test {
-    exclude '**/Workshop*'
+    exclude '**/workshop*'
 }
 
 repositories {
