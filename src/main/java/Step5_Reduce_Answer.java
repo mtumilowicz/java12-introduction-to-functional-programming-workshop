@@ -15,7 +15,7 @@ public class Step5_Reduce_Answer {
     }
 
     static List<Integer> iteratePositiveUpTo(int max) {
-        if (max == 0) return List.empty();
+        if (max <= 0) return List.empty();
         else return iteratePositiveUpTo(max - 1).append(max);
     }
 
@@ -31,7 +31,7 @@ public class Step5_Reduce_Answer {
         return reduce(xs, 0, Integer::sum);
     }
 
-    static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
+    static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
         return sum(square(filterEven(iteratePositiveUpTo(max))));
     }
 }
