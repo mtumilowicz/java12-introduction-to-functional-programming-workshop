@@ -4,6 +4,7 @@ import spock.lang.Specification
 import java.util.function.BiFunction
 import java.util.function.Function
 import java.util.function.Predicate
+import java.util.function.UnaryOperator
 
 /**
  * Created by mtumilowicz on 2019-06-19.
@@ -98,6 +99,33 @@ class Step6_Combinators_AnswerTest extends Specification {
 
         expect:
         Step6_Combinators_Answer.filter(empty, even) == List.of(2, 4)
+    }
+
+    def "test map empty list"() {
+        given:
+        def empty = List.<Integer> empty()
+        UnaryOperator<Integer> square = { it**2 }
+
+        expect:
+        Step6_Combinators_Answer.map(empty, square) == List.empty()
+    }
+
+    def "test map single element list"() {
+        given:
+        def empty = List.of(3)
+        UnaryOperator<Integer> square = { it**2 }
+
+        expect:
+        Step6_Combinators_Answer.map(empty, square) == List.of(9)
+    }
+
+    def "test map multiple element list"() {
+        given:
+        def empty = List.of(7, 3, 5)
+        UnaryOperator<Integer> square = { it**2 }
+
+        expect:
+        Step6_Combinators_Answer.map(empty, square) == List.of(49, 9, 25)
     }
 
     def "test iteratePositiveUpTo < 0"() {
