@@ -1,3 +1,5 @@
+package workshop;
+
 import java.util.List;
 
 public class Step2_Split_Workshop {
