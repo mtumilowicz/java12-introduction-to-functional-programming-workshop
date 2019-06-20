@@ -1,6 +1,8 @@
 # java12-introduction-to-functional-programming-workshop
 
 # project description
+* the main goal of this workshops are to introduce basic functional programming concepts like
+`flatMap`, `reduce` and show how it was formally invented
 * https://www.youtube.com/watch?v=9RGVDdE5QjI
 * https://github.com/shishkin/java-fp
 * https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-flatMap
