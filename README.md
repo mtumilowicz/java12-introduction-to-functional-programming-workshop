@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java12-introduction-to-functional-programming-workshop.svg?branch=master)](https://travis-ci.com/mtumilowicz/java12-introduction-to-functional-programming-workshop)
 # java12-introduction-to-functional-programming-workshop
 
 # project description
