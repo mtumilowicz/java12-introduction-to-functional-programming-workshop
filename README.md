@@ -11,7 +11,7 @@
     * `Step2_Split_Workshop` - split loop into many small functions
     * `Step3_Recursion_Workshop` - use recursion
         * `Step3P_Recursion_Workshop` - use vavr API
-    * `Step4_FlatMap_Workshop` - abstract common functionalities in `flatMap`
+    * `Step4_FlatMap_Workshop` - abstract common functionality into `flatMap`
     * `Step5_Reduce_Workshop` - abstract `flatMap` to `reduce`
     * `Step6_Filter_Map_Workshop` - implement `filter` and `map` using `flatMap`
     * `Step7_Streams_Answer` - implement using java's Stream API
