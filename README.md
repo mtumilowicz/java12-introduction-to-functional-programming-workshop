@@ -20,4 +20,59 @@
 * answers with correctly implemented workshop methods are in 
 `answers` package
 
+# workshops
+1. the main goal is to refactor following loop:
+    ```
+    static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
+        int sum = 0; // SUM (expression)
+    
+        for (int x = 1; x <= max; x++) { // ITERATE (statement, mutation)
+            if (x % 2 == 0) { // FILTER (statement)
+                sum += x * x; // SQUARE and SUM (statement, expression, mutation)
+            }
+        }
+    
+        return sum;
+    }
+    ```
+    into something like this:
+    ```
+    sum(square(filterEven(iteratePositivesUpTo(max)))) // only expressions
+    ```
+    and then, of course - using java Stream API
+    ```
+    IntStream
+        .rangeClosed(1, max)
+        .filter(isEven)
+        .map(square)
+        .sum();
+    ```
+    problems with the very first peace of code code:
+    * important parts of your code have to stick out
+    * not testable in isolation
+    * reusability is quite low
+    * by introducing mutable state in statement based programming
+        we sacrifice the opportunity to encapsulate code (to refactor
+        it with ease)
+        * statements - complete line of code that performs some action
+        * expressions - any section of the code that evaluates to a value
+        * rule of thumb: if you can print it, or assign it to a variable, it's an expression; if you can't, 
+        it's a statement
+        
+1. we will try to get rid of:
+    * violation of SRP (single responsibility principle)
+    * mutable variables
+    * statement-based programming
+    
+    using:
+    * pure functions
+        * not change anything (no side-effects)
+        * not depends on something that can possibly change (same input = same output)
+        * note that pure functions are directly connected to referential transparency - substitute 
+        code with values (in your mind you can replace code with values - you don't
+        need to track of state mutations etc.)
+    * recursion (to beat mutations)
+        * StackOverflow
+        * tail-recursion
+        * trampoline
 * time in video: 40.00 - summary
