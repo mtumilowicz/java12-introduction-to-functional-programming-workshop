@@ -71,8 +71,53 @@
         * note that pure functions are directly connected to referential transparency - substitute 
         code with values (in your mind you can replace code with values - you don't
         need to track of state mutations etc.)
+        * note that pure functions does not need to be mocked
     * recursion (to beat mutations)
+        * theoretical foundation of referential transparency
         * StackOverflow
         * tail-recursion
         * trampoline
+1. if we rewrite smaller functions using recursion, it is easy to see that some pattern emerges:
+    ```
+    static List<Integer> filterEven(List<Integer> xs) {
+        if (xs.isEmpty()) return List.empty();
+        else return xs.head() % 2 == 0
+                ? filterEven(xs.tail()).prepend(xs.head())
+                : filterEven(xs.tail());
+    }
+    
+    static List<Integer> square(List<Integer> xs) {
+        if (xs.isEmpty()) return List.empty();
+        else return square(xs.tail()).prepend(xs.head() * xs.head());
+    }
+    ```
+    it's recursion + concatenation and could be easily abstracted into well-know `flatMap`:
+    ```
+    static List<Integer> flatMap(List<Integer> xs, Function<Integer, List<Integer>> f) {
+        if (xs.isEmpty()) return List.empty();
+        else return f.apply(xs.head()).appendAll(flatMap(xs.tail(), f));
+    }
+    ```
+1. if we take `sum` function, emerging pattern is well-know `reduce`:
+    ```
+    static int sum(List<Integer> xs) {
+        if (xs.isEmpty()) return 0;
+        else return xs.head() + sum(xs.tail());
+    }
+    ```
+    recursion, transforming + combining:
+    ```
+    static <A, R> R reduce(List<A> xs, R zero, BiFunction<R, A, R> combine) {
+        if (xs.isEmpty()) return zero;
+        else return combine.apply(reduce(xs.tail(), zero, combine), xs.head());
+    }
+    ```
+1. note that `flatMap` is special case of `reduce`:
+    ```
+    static <A> List<A> flatMap(List<A> xs, Function<A, List<A>> f) {
+        return reduce(xs, List.empty(), (acc, x) -> f.apply(x).appendAll(acc));
+    }
+    ```
+1. note that `map`, `filter` could be implemented using only `flatMap`
+    * https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-flatMap
 * time in video: 40.00 - summary
