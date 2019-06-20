@@ -1,4 +1,4 @@
-package answers;
+package workshop;
 
 import io.vavr.collection.List;
 
@@ -6,7 +6,17 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class Step6_Abstract_Answer {
+public class Step6_Filter_Map_Workshop {
+
+    static <A> List<A> filter(List<A> xs, Predicate<A> f) {
+        // flatMap
+        return null;
+    }
+
+    static <A, B> List<B> map(List<A> xs, Function<A, B> f) {
+        // flatMap
+        return null;
+    }
 
     static <A, R> R reduce(List<A> xs, R zero, BiFunction<R, A, R> combine) {
         if (xs.isEmpty()) return zero;
@@ -15,14 +25,6 @@ public class Step6_Abstract_Answer {
 
     static <A, B> List<B> flatMap(List<A> xs, Function<A, List<B>> f) {
         return reduce(xs, List.empty(), (acc, x) -> f.apply(x).appendAll(acc));
-    }
-
-    static <A> List<A> filter(List<A> xs, Predicate<A> f) {
-        return flatMap(xs, x -> f.test(x) ? List.of(x) : List.empty());
-    }
-
-    static <A, B> List<B> map(List<A> xs, Function<A, B> f) {
-        return flatMap(xs, x -> List.of(f.apply(x)));
     }
 
     static List<Integer> iteratePositivesUpTo(int max) {
