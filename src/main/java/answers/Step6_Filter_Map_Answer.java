@@ -14,7 +14,7 @@ public class Step6_Filter_Map_Answer {
     }
 
     static <A, B> List<B> flatMap(List<A> xs, Function<A, List<B>> f) {
-        return reduce(xs, List.empty(), (acc, x) -> f.apply(x).appendAll(acc));
+        return reduce(xs, List.empty(), (acc, x) -> acc.prependAll(f.apply(x)));
     }
 
     static <A> List<A> filter(List<A> xs, Predicate<A> f) {

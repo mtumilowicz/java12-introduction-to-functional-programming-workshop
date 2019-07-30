@@ -15,7 +15,7 @@ public class Step5_Reduce_Workshop {
     }
 
     static <A> List<A> flatMap(List<A> xs, Function<A, List<A>> f) {
-        // reduce, f, appendAll
+        // reduce, f, prependAll
         
         return null;
     }

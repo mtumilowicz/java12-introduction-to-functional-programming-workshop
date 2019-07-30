@@ -8,7 +8,7 @@ public class Step4_FlatMap_Workshop {
 
     static List<Integer> flatMap(List<Integer> xs, Function<Integer, List<Integer>> f) {
         // xs.isEmpty
-        // f, xs.head(), appendAll, flatMap, xs.tail()
+        // flatMap, xs.tail(), prependAll f, xs.head()
         
         return null;
     }

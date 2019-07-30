@@ -13,7 +13,7 @@ public class Step5_Reduce_Answer {
     }
 
     static <A> List<A> flatMap(List<A> xs, Function<A, List<A>> f) {
-        return reduce(xs, List.empty(), (acc, x) -> f.apply(x).appendAll(acc));
+        return reduce(xs, List.empty(), (acc, x) -> acc.prependAll(f.apply(x)));
     }
 
     static List<Integer> iteratePositivesUpTo(int max) {

@@ -8,7 +8,7 @@ public class Step4_FlatMap_Answer {
 
     static List<Integer> flatMap(List<Integer> xs, Function<Integer, List<Integer>> f) {
         if (xs.isEmpty()) return List.empty();
-        else return f.apply(xs.head()).appendAll(flatMap(xs.tail(), f));
+        else return flatMap(xs.tail(), f).prependAll(f.apply(xs.head()));
     }
 
     static List<Integer> iteratePositivesUpTo(int max) {
