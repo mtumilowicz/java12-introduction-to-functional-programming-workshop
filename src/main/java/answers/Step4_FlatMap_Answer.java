@@ -11,9 +11,9 @@ public class Step4_FlatMap_Answer {
         else return flatMap(xs.tail(), f).prependAll(f.apply(xs.head()));
     }
 
-    static List<Integer> iteratePositivesUpTo(int max) {
+    static List<Integer> generatePositivesUpTo(int max) {
         if (max <= 0) return List.empty();
-        else return iteratePositivesUpTo(max - 1).append(max);
+        else return generatePositivesUpTo(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
@@ -30,6 +30,6 @@ public class Step4_FlatMap_Answer {
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
-        return sum(square(filterEven(iteratePositivesUpTo(max))));
+        return sum(square(filterEven(generatePositivesUpTo(max))));
     }
 }

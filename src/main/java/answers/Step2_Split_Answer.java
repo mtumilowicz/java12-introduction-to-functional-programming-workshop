@@ -4,7 +4,7 @@ import io.vavr.collection.List;
 
 public class Step2_Split_Answer {
 
-    static List<Integer> iteratePositivesUpTo(int max) {
+    static List<Integer> generatePositivesUpTo(int max) {
         return List.rangeClosed(1, max);
     }
 
@@ -21,6 +21,6 @@ public class Step2_Split_Answer {
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
-        return sum(square(filterEven(iteratePositivesUpTo(max))));
+        return sum(square(filterEven(generatePositivesUpTo(max))));
     }
 }

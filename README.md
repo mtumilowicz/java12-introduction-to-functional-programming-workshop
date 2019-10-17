@@ -39,7 +39,7 @@
     ```
     into something like this:
     ```
-    sum(square(filterEven(iteratePositivesUpTo(max)))) // only expressions
+    sum(square(filterEven(generatePositivesUpTo(max)))) // only expressions
     ```
     and then, of course - using java Stream API
     ```

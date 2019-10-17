@@ -28,12 +28,12 @@ public class Step4_FlatMap_Workshop {
         else return xs.head() + sum(xs.tail());
     }
 
-    static List<Integer> iteratePositivesUpTo(int max) {
+    static List<Integer> generatePositivesUpTo(int max) {
         if (max <= 0) return List.empty();
-        else return iteratePositivesUpTo(max - 1).append(max);
+        else return generatePositivesUpTo(max - 1).append(max);
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
-        return sum(square(filterEven(iteratePositivesUpTo(max))));
+        return sum(square(filterEven(generatePositivesUpTo(max))));
     }
 }

@@ -130,28 +130,28 @@ class Step6_Filter_Map_WorkshopTest extends Specification {
         Step6_Filter_Map_Workshop.map(empty, square) == List.of(49, 9, 25)
     }
 
-    def "test iteratePositivesUpTo < 0"() {
+    def "test generatePositivesUpTo < 0"() {
         given:
         int max = -1
 
         expect:
-        Step6_Filter_Map_Workshop.iteratePositivesUpTo(max) == List.empty()
+        Step6_Filter_Map_Workshop.generatePositivesUpTo(max) == List.empty()
     }
 
-    def "test iteratePositivesUpTo 0"() {
+    def "test generatePositivesUpTo 0"() {
         given:
         int max = 0
 
         expect:
-        Step6_Filter_Map_Workshop.iteratePositivesUpTo(max) == List.empty()
+        Step6_Filter_Map_Workshop.generatePositivesUpTo(max) == List.empty()
     }
 
-    def "test iteratePositivesUpTo > 0"() {
+    def "test generatePositivesUpTo > 0"() {
         given:
         int max = 5
 
         expect:
-        Step6_Filter_Map_Workshop.iteratePositivesUpTo(max) == List.of(1, 2, 3, 4, 5)
+        Step6_Filter_Map_Workshop.generatePositivesUpTo(max) == List.of(1, 2, 3, 4, 5)
     }
 
     def "test filterEven all even"() {

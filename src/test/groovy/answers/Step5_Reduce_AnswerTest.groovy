@@ -66,28 +66,28 @@ class Step5_Reduce_AnswerTest extends Specification {
         Step5_Reduce_Answer.flatMap(list, triple) == List.of(1, 1, 1, 2, 2, 2, 3, 3, 3)
     }
 
-    def "test iteratePositivesUpTo < 0"() {
+    def "test generatePositivesUpTo < 0"() {
         given:
         int max = -1
 
         expect:
-        Step5_Reduce_Answer.iteratePositivesUpTo(max) == List.empty()
+        Step5_Reduce_Answer.generatePositivesUpTo(max) == List.empty()
     }
 
-    def "test iteratePositivesUpTo 0"() {
+    def "test generatePositivesUpTo 0"() {
         given:
         int max = 0
 
         expect:
-        Step5_Reduce_Answer.iteratePositivesUpTo(max) == List.empty()
+        Step5_Reduce_Answer.generatePositivesUpTo(max) == List.empty()
     }
 
-    def "test iteratePositivesUpTo > 0"() {
+    def "test generatePositivesUpTo > 0"() {
         given:
         int max = 5
 
         expect:
-        Step5_Reduce_Answer.iteratePositivesUpTo(max) == List.of(1, 2, 3, 4, 5)
+        Step5_Reduce_Answer.generatePositivesUpTo(max) == List.of(1, 2, 3, 4, 5)
     }
 
     def "test filterEven all even"() {

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Step2_Split_Workshop {
 
-     static List<Integer> iteratePositivesUpTo(int max) {
+     static List<Integer> generatePositivesUpTo(int max) {
         // closed interval [1, max]
          
          return null;
@@ -23,6 +23,6 @@ public class Step2_Split_Workshop {
     }
 
     static int sumOfSquaresOfEvenPositiveNumbersUpTo(int max) {
-        return sum(square(filterEven(iteratePositivesUpTo(max))));
+        return sum(square(filterEven(generatePositivesUpTo(max))));
     }
 }

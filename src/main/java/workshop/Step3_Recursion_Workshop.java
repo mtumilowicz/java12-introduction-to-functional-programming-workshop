@@ -4,7 +4,7 @@ import io.vavr.collection.List;
 
 public class Step3_Recursion_Workshop {
 
-    static List<Integer> iteratePositivesUpTo(int max) {
+    static List<Integer> generatePositivesUpTo(int max) {
         // max <= 0
         // max - 1, append
         
@@ -34,6 +34,6 @@ public class Step3_Recursion_Workshop {
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
-        return sum(square(filterEven(iteratePositivesUpTo(max))));
+        return sum(square(filterEven(generatePositivesUpTo(max))));
     }
 }

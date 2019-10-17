@@ -27,9 +27,9 @@ public class Step6_Filter_Map_Workshop {
         return reduce(xs, List.empty(), (acc, x) -> acc.prependAll(f.apply(x)));
     }
 
-    static List<Integer> iteratePositivesUpTo(int max) {
+    static List<Integer> generatePositivesUpTo(int max) {
         if (max <= 0) return List.empty();
-        else return iteratePositivesUpTo(max - 1).append(max);
+        else return generatePositivesUpTo(max - 1).append(max);
     }
 
     static List<Integer> filterEven(List<Integer> xs) {
@@ -45,6 +45,6 @@ public class Step6_Filter_Map_Workshop {
     }
 
     static int sumOfSquaresOfPositiveEvenNumbersUpTo(int max) {
-        return sum(square(filterEven(iteratePositivesUpTo(max))));
+        return sum(square(filterEven(generatePositivesUpTo(max))));
     }
 }
