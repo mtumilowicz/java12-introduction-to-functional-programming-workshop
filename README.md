@@ -1,15 +1,16 @@
 [![Build Status](https://travis-ci.com/mtumilowicz/java12-introduction-to-functional-programming-workshop.svg?branch=master)](https://travis-ci.com/mtumilowicz/java12-introduction-to-functional-programming-workshop)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 # java12-introduction-to-functional-programming-workshop
+* references
+   * [Hitchhiker's Guide to Functional Programming - Voxxed Days Singapore 2018](https://www.youtube.com/watch?v=9RGVDdE5QjI)
+   * https://github.com/shishkin/java-fp
+   * https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-flatMap
+   * https://github.com/mtumilowicz/java12-stream-flatMap-implementation-using-reduce
+   * https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-reduce
 
 # project description
 * the main goal of this workshops is to introduce basic functional programming concepts like
 `flatMap`, `reduce` and show how they was formally invented
-* https://www.youtube.com/watch?v=9RGVDdE5QjI
-* https://github.com/shishkin/java-fp
-* https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-flatMap
-* https://github.com/mtumilowicz/java12-stream-flatMap-implementation-using-reduce
-* https://github.com/mtumilowicz/java11-stream-map-filter-implementation-using-reduce
 * workshops are in `workshop` package
     * `Step1_LoopTest` - loop that we will refactor in 6 steps
     * `Step2_Split_Workshop` - split loop into many tiny functions
