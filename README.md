@@ -61,6 +61,7 @@
         * expressions - any section of the code that evaluates to a value
         * rule of thumb: if you can print it, or assign it to a variable, it's an expression; if you can't, 
         it's a statement
+    * hard to parallelize
         
 1. we will try to get rid of:
     * violation of SRP (single responsibility principle)
